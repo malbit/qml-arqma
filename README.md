@@ -1,16 +1,16 @@
-qml-xmr
+qml-arqma
 ==============
 
-Development environment for QML/JS with a mock Qt application that resembles the Monero GUI.
+Development environment for QML/JS with a mock Qt application that resembles the Arqma GUI.
 
 ![](https://i.imgur.com/YnbWvwI.png)
 
-Solves the problem of having to wait on monero-gui compiles to see your latest QML/JS changes.
+Solves the problem of having to wait on arqma-gui compiles to see your latest QML/JS changes.
 
 Included in this repository are:
 
-- `qml-xmr` - Fork of [qml-livereload](https://github.com/penk/qml-livereload). Injects monero-gui related context.
-- An example Qt application that uses Monero components.
+- `qml-xmr` - Fork of [qml-livereload](https://github.com/penk/qml-livereload). Injects arqma-gui related context.
+- An example Qt application that uses Arqma(Monero) components.
 
 The recommended way is to use the Sublime Text 3 to edit `app/Mock.qml`, then compile it via a custom Sublime build system.
 
@@ -31,10 +31,10 @@ Make sure to correctly set your environment. Consult `qtchooser -print-env`
 ### Installation
 
 
-First compile `qml-xmr`:
+First compile `qml-arqma`:
 
 ```
-cd qml-xmr
+cd qml-arqma
 cmake . && make && sudo make install
 ```
 
@@ -42,14 +42,14 @@ Or if you prefer `qmake`:
 
 
 ```
-cd qml-xmr
+cd qml-arqma
 qmake
 sudo make
 ```
 
-Compiled binary will be found at `/usr/local/bin/qml-xmr`.
+Compiled binary will be found at `/usr/local/bin/qml-arqma`.
 
-Update the `monero-gui` submodule:
+Update the `arqma-gui` submodule:
 
 ```
 git submodule init
@@ -64,16 +64,16 @@ Launch Sublime Text 3 and make a new build system:
 
 ```javascript
 {
-    "shell_cmd": "qml-xmr $file_path/monero-gui.qml"
+    "shell_cmd": "qml-arqma $file_path/monero-gui.qml"
 }
 ```
 
-4. Save the file as `qml-xmr.sublime-build`
-5. Go to `Tools->Build System` and select `qml-xmr`
+4. Save the file as `qml-arqma.sublime-build`
+5. Go to `Tools->Build System` and select `qml-arqma`
 
 Modify `Mock.qml` as you please. Press `CTRL-B` to run the application.
 
 ### Tips
 
-- `monero-gui.qml` is the entry point of the application, you shouldn't need to edit it. It includes `Mock.qml` automatically.
-- Update the submodule `monero-gui` regularly
+- `arqma-gui.qml` is the entry point of the application, you shouldn't need to edit it. It includes `Mock.qml` automatically.
+- Update the submodule `arqma-gui` regularly
